@@ -302,6 +302,10 @@ async function fetchAndRun() {
         console.log('Edges:', edges);
 
 
+
+
+
+        await delay(4000);
         // Define start and goal nodes
         const startNodeIndex = 0; // Start at index 0
         const goalNodeIndex = nodes.length - 1; // Goal at last index
