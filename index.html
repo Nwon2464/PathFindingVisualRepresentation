@@ -2,36 +2,68 @@
 <html>
 
 <head>
-    <title>Map of Japan</title>
+    <meta charset="UTF-8" />
+    <title>東京都ルート探索</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <style>
-        #map {
-            height: 100vh;
-        }
-
-        #controls {
-            position: absolute;
-            top: 10px;
-            left: 50px;
-            z-index: 1000;
-            background: white;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-        }
-
-        #controls button {
-            margin: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <div id="hud" aria-live="polite">
+        <div class="hud-title">東京都ルート探索</div>
+        <div id="hudPhase" class="hud-phase">地図データを読み込み中</div>
+        <div class="hud-metrics">
+            <div>
+                <span>アルゴリズム</span>
+                <strong id="hudAlgorithm">A*</strong>
+            </div>
+            <div>
+                <span>訪問数</span>
+                <strong id="hudVisited">0</strong>
+            </div>
+            <div>
+                <span>距離</span>
+                <strong id="hudDistance">--</strong>
+            </div>
+        </div>
+    </div>
+
+    <div id="controls" aria-label="Path finding controls">
+        <div class="control-header">
+            <h1>ルート探索</h1>
+            <span id="status">地図データを読み込み中。</span>
+        </div>
+
+        <div class="control-row">
+            <button class="mode-button" data-mode="start" type="button">始点を設定</button>
+            <button class="mode-button is-active" data-mode="goal" type="button">終点を設定</button>
+        </div>
+
+        <div class="selection-summary">
+            <div>
+                <span>始点</span>
+                <strong id="startValue">ノード 0</strong>
+            </div>
+            <div>
+                <span>終点</span>
+                <strong id="goalValue">未選択</strong>
+            </div>
+        </div>
+
+        <label for="algorithmSelect">アルゴリズム</label>
+        <select id="algorithmSelect">
+            <option value="astar">A*</option>
+            <option value="dijkstra">Dijkstra</option>
+        </select>
+
+        <div class="control-row">
+            <button id="runButton" class="primary-button" type="button" disabled>実行</button>
+            <button id="resetButton" type="button">クリア</button>
+        </div>
+    </div>
     <div id="map"></div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/6.5.0/turf.min.js"></script>
     <script src="app.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 </body>
 
 </html>

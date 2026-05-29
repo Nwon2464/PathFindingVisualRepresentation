@@ -1,8 +1,26 @@
-# A-Star Journey
+# Tokyo A* Route Visualizer
 
-Path Finding Visual Representation From Start to Finish
+東京23区の道路データで、A*のルート探索をアニメーション表示するミニプロジェクトです。
 
-![Application Demo](https://github.com/Nwon2464/PathFindingVisualRepresentation/blob/a261ae1d5b37487bca5187ea8a978a35adafeb18/zertotwenty.gif)
+![Tokyo A* route demo](assets/demo.gif)
 
-![Application Demo](https://github.com/Nwon2464/PathFindingVisualRepresentation/blob/a261ae1d5b37487bca5187ea8a978a35adafeb18/twentytoforty.gif)
+## できること
 
+- OpenStreetMapベースの道路グラフを表示
+- A*で最短ルートを探索
+- 探索中のノードと最終ルートをアニメーションで可視化
+- Dijkstraにも切り替え可能
+
+## 使い方
+
+```bash
+python3 -m http.server 8000
+```
+
+```text
+http://127.0.0.1:8000/
+```
+
+## Tech
+
+HTML / CSS / JavaScript / Leaflet / OpenStreetMap

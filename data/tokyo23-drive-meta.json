@@ -1,0 +1,22 @@
+{
+  "source": "OpenStreetMap via OSMnx",
+  "networkType": "drive",
+  "directed": true,
+  "nodes": 113657,
+  "edges": 301452,
+  "bounds": {
+    "lngMin": 139.5631173,
+    "lngMax": 139.9172643,
+    "latMin": 35.533537,
+    "latMax": 35.8174602
+  },
+  "edgeWeightKm": {
+    "min": 0.0005143526116863862,
+    "max": 5.534949652478288,
+    "avg": 0.07110508123482144
+  },
+  "files": {
+    "nodes": "data/tokyo23-drive-nodes.json",
+    "edges": "data/tokyo23-drive-edges.json"
+  }
+}
